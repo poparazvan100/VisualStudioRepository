@@ -6,11 +6,11 @@ struct date {
 	int year;
 };
 
-struct employee {
-	//char name[10];
+typedef struct employee {
+	char name[10];
 	struct date hireDate;
 	float salary;
-};
+} emp;
 
 int main() {
 	printf("*******  Structures ******\n\n");
@@ -49,17 +49,17 @@ int main() {
 
 	/*E Exercise here*/
 	
-	struct employee newGuy = {today,12000};
+	emp newGuy = {"John",today,12000};
 
-	//printf("Name %s\n", newGuy.name);
+	printf("Name %s\n", newGuy.name);
 	printf("Hire date is %i/%i/%i\n", newGuy.hireDate.month, newGuy.hireDate.day, newGuy.hireDate.year);
 	printf("Salary is %.2f\n", newGuy.salary);
 
 	struct employee newColleague;
 
 	printf("Enter the data for the new colleague: \n");
-	//printf("Name: ");
-	//scanf_s("%s", &newColleague.name);
+	printf("Name: ");
+	fgets(newColleague.name,sizeof(newColleague.name),stdin);
 	printf("Salary: ");
 	scanf_s("%f", &newColleague.salary);
 	printf("Hire date day: ");
@@ -69,7 +69,7 @@ int main() {
 	printf("Hire date year: ");
 	scanf_s("%i", &newColleague.hireDate.year);
 
-	//printf("Name %s\n", newColleague.name);
+	printf("Name %s\n", newColleague.name);
 	printf("Hire date is %i/%i/%i\n", newColleague.hireDate.month, newColleague.hireDate.day, newColleague.hireDate.year);
 	printf("Salary is %.2f\n", newColleague.salary);
 
